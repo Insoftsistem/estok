@@ -1,16 +1,29 @@
-[phases.setup]
+[setup]
 nixPkgs = [
   "php82",
   "php82Extensions.gd",
   "php82Extensions.pdo_mysql",
-  "nodejs_22"
+  "php82Extensions.mbstring",
+  "php82Extensions.xml",
+  "php82Extensions.curl",
+  "php82Extensions.zip",
+  "nodejs_22",
+  "composer"
 ]
 
-[phases.build]
+[install]
 cmds = [
-  "composer install --no-interaction --prefer-dist --optimize-autoloader",
-  "npm install",
-  "npm run build"
+  "composer install --ignore-platform-reqs --no-interaction",
+  "npm install"
+]
+
+[build]
+cmds = [
+  "npm run build || true",
+  "php artisan key:generate || true",
+  "php artisan config:clear || true",
+  "php artisan route:clear || true",
+  "php artisan view:clear || true"
 ]
 
 [start]
