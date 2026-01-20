@@ -2,7 +2,7 @@
 namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Http\Controllers\DB;
+use Illuminate\Support\Facades\DB; ✅ CERTO
 /**
  * Index Page Controller
  * @category  Controller
