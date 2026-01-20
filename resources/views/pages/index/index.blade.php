@@ -67,15 +67,12 @@
                 </div>
                 <div class="col-md-4 comp-grid " >
                     <div class=" "><div>
-                        @php
-                        $config = DB::table('config_site')->first(); // pega a primeira configuração
-                        @endphp
                         <!DOCTYPE html>
                         <html lang="pt-BR">
                         <head>
                         <meta charset="UTF-8">
                         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                        <title>{!! $config->nome_site ?? 'Meu Site' !!}</title> {{-- evita erro se $config for null --}}
+                        <title>{{ $config->nome_site ?? 'Meu Site' }}</title>
                         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
                             <style>
                             body { font-family: Arial, sans-serif; background: #f4f4f4; margin:0; padding:0; }
@@ -93,18 +90,20 @@
                             @if($config)
                             <div class="site-config">
                                 <div class="logo">
-                                    @if($config->logo)
+                                    @if(!empty($config->logo))
                                     <img src="{{ asset($config->logo) }}" alt="Logo do Site">
                                     @endif
                                 </div>
-                                <h1>{!! $config->nome_site !!}</h1>
+                                <h1>{{ $config->nome_site }}</h1>
                                 <div class="info">
                                     @if($config->cnpj)<p><strong>CNPJ:</strong> {{ $config->cnpj }}</p>@endif
                                     @if($config->endereco)<p><strong>Endereço:</strong> {!! $config->endereco !!}</p>@endif
                                     @if($config->telefone)<p><strong>Telefone:</strong> {{ $config->telefone }}</p>@endif
                                     @if($config->whatsapp)<p><strong>WhatsApp:</strong> {{ $config->whatsapp }}</p>@endif
                                     @if($config->email)<p><strong>Email:</strong> {{ $config->email }}</p>@endif
-                                    @if($config->horario_funcionamento)<p><strong>Horário de Funcionamento:</strong> {!! $config->horario_funcionamento !!}</p>@endif
+                                    @if($config->horario_funcionamento)
+                                    <p><strong>Horário de Funcionamento:</strong> {!! $config->horario_funcionamento !!}</p>
+                                    @endif
                                 </div>
                                 <div class="redes-sociais">
                                     @if($config->facebook)
@@ -135,7 +134,9 @@
                                 </div>
                             </div>
                             @else
-                            <p>Nenhuma configuração cadastrada.</p>
+                            <p style="text-align:center; margin-top:50px;">
+                            Nenhuma configuração cadastrada.
+                            </p>
                             @endif
                             </body>
                             </html>
