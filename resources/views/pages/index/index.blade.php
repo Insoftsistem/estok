@@ -72,7 +72,7 @@
                         <head>
                         <meta charset="UTF-8">
                         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                        <title>{{ $config->nome_site ?? 'Meu Site' }}</title>
+                        <title>{{ $data->nome_site ?? 'Meu Site' }}</title>
                         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
                             <style>
                             body { font-family: Arial, sans-serif; background: #f4f4f4; margin:0; padding:0; }
@@ -87,47 +87,57 @@
                             </style>
                             </head>
                             <body>
-                            @if($config)
+                            @if($data)
                             <div class="site-config">
                                 <div class="logo">
-                                    @if(!empty($config->logo))
-                                    <img src="{{ asset($config->logo) }}" alt="Logo do Site">
+                                    @if(!empty($data->logo))
+                                    <img src="{{ asset($data->logo) }}" alt="Logo do Site">
                                     @endif
                                 </div>
-                                <h1>{{ $config->nome_site }}</h1>
+                                <h1>{{ $data->nome_site }}</h1>
                                 <div class="info">
-                                    @if($config->cnpj)<p><strong>CNPJ:</strong> {{ $config->cnpj }}</p>@endif
-                                    @if($config->endereco)<p><strong>Endereço:</strong> {!! $config->endereco !!}</p>@endif
-                                    @if($config->telefone)<p><strong>Telefone:</strong> {{ $config->telefone }}</p>@endif
-                                    @if($config->whatsapp)<p><strong>WhatsApp:</strong> {{ $config->whatsapp }}</p>@endif
-                                    @if($config->email)<p><strong>Email:</strong> {{ $config->email }}</p>@endif
-                                    @if($config->horario_funcionamento)
-                                    <p><strong>Horário de Funcionamento:</strong> {!! $config->horario_funcionamento !!}</p>
+                                    @if($data->cnpj)
+                                    <p><strong>CNPJ:</strong> {{ $data->cnpj }}</p>
+                                    @endif
+                                    @if($data->endereco)
+                                    <p><strong>Endereço:</strong> {!! $data->endereco !!}</p>
+                                    @endif
+                                    @if($data->telefone)
+                                    <p><strong>Telefone:</strong> {{ $data->telefone }}</p>
+                                    @endif
+                                    @if($data->whatsapp)
+                                    <p><strong>WhatsApp:</strong> {{ $data->whatsapp }}</p>
+                                    @endif
+                                    @if($data->email)
+                                    <p><strong>Email:</strong> {{ $data->email }}</p>
+                                    @endif
+                                    @if($data->horario_funcionamento)
+                                    <p><strong>Horário de Funcionamento:</strong> {!! $data->horario_funcionamento !!}</p>
                                     @endif
                                 </div>
                                 <div class="redes-sociais">
-                                    @if($config->facebook)
-                                    <a href="https://facebook.com/{{ $config->facebook }}" target="_blank">
+                                    @if($data->facebook)
+                                    <a href="https://facebook.com/{{ $data->facebook }}" target="_blank">
                                         <i class="fab fa-facebook"></i>
                                     </a>
                                     @endif
-                                    @if($config->instagram)
-                                    <a href="https://instagram.com/{{ $config->instagram }}" target="_blank">
+                                    @if($data->instagram)
+                                    <a href="https://instagram.com/{{ $data->instagram }}" target="_blank">
                                         <i class="fab fa-instagram"></i>
                                     </a>
                                     @endif
-                                    @if($config->twitter)
-                                    <a href="https://twitter.com/{{ $config->twitter }}" target="_blank">
+                                    @if($data->twitter)
+                                    <a href="https://twitter.com/{{ $data->twitter }}" target="_blank">
                                         <i class="fab fa-twitter"></i>
                                     </a>
                                     @endif
-                                    @if($config->linkedin)
-                                    <a href="https://linkedin.com/in/{{ $config->linkedin }}" target="_blank">
+                                    @if($data->linkedin)
+                                    <a href="https://linkedin.com/in/{{ $data->linkedin }}" target="_blank">
                                         <i class="fab fa-linkedin"></i>
                                     </a>
                                     @endif
-                                    @if($config->youtube)
-                                    <a href="https://youtube.com/{{ $config->youtube }}" target="_blank">
+                                    @if($data->youtube)
+                                    <a href="https://youtube.com/{{ $data->youtube }}" target="_blank">
                                         <i class="fab fa-youtube"></i>
                                     </a>
                                     @endif
