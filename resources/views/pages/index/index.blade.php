@@ -67,6 +67,9 @@
                 </div>
                 <div class="col-md-4 comp-grid " >
                     <div class=" "><div>
+                        @php
+                        $data = DB::table('config_site')->first(); // pega a primeira configuração
+                        @endphp
                         <!DOCTYPE html>
                         <html lang="pt-BR">
                         <head>
