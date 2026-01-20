@@ -12,6 +12,14 @@ class IndexController extends Controller{
      * @return View
      */
 	function index(){
+		
+		{
+        $data = DB::table('config_site')->first();
+
+        return view('pages.index.index', compact('data'));
+    }
+		
+		
 		return view("pages.index.index");
 	}
 
@@ -22,4 +30,9 @@ class IndexController extends Controller{
 	function login(){
 		return view("pages.index.login");
 	}
+	
+	
+	
+	
+	
 }
