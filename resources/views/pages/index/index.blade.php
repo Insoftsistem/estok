@@ -9,7 +9,6 @@
         @extends($layout)
         @section('title', $pageTitle)
         @section('content')
-		
         <div>
             <div  class="mb-3" >
                 <div class="container-fluid">
@@ -51,7 +50,7 @@
                                     <div class="form-group text-center">
                                         <button class="btn btn-primary btn-block btn-md" type="submit"> 
                                         <i class="load-indicator">
-										{{--<clip-loader :loading="loading" color="#fff" size="20px"></clip-loader> --}}
+                                        <clip-loader :loading="loading" color="#fff" size="20px"></clip-loader> 
                                         </i>
                                         {{ __('login') }} <i class="material-icons">lock_open</i>
                                         </button>
@@ -68,11 +67,7 @@
                 </div>
                 <div class="col-md-4 comp-grid " >
                     <div class=" "><div>
-                        
-                        {{ $data->nome_site ?? 'Meu Site' }}
-                        
-                           
-                           
+                       
                             @if($data)
                             <div class="site-config">
                                 <div class="logo">
@@ -153,7 +148,7 @@
 @endsection
 <!-- Page custom css -->
 @section('pagecss')
- <style>
+<style>
                             body { font-family: Arial, sans-serif; background: #f4f4f4; margin:0; padding:0; }
                             .site-config { max-width: 800px; margin:50px auto; background:#fff; padding:30px; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.1); }
                             .logo img { max-width:150px; margin-bottom:20px; }
@@ -163,9 +158,10 @@
                             .redes-sociais a { display:inline-block; margin-right:15px; font-size:24px; color:#555; transition: color 0.3s; text-decoration:none; }
                             .redes-sociais a:hover { color:#007BFF; }
                             .info { margin-top:15px; }
+                            </style>
+<style>
+<style></style>
 </style>
-                            
-
 @endsection
 <!-- Page custom js -->
 @section('pagejs')
