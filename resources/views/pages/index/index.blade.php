@@ -67,103 +67,94 @@
                 </div>
                 <div class="col-md-4 comp-grid " >
                     <div class=" "><div>
-                        <!DOCTYPE html>
-                        <html lang="pt-BR">
-                        <head>
-                        <meta charset="UTF-8">
-                        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                        <title>{{ $data->nome_site ?? 'Meu Site' }}</title>
-                        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-                            <style>
-                            body { font-family: Arial, sans-serif; background: #f4f4f4; margin:0; padding:0; }
-                            .site-config { max-width: 800px; margin:50px auto; background:#fff; padding:30px; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.1); }
-                            .logo img { max-width:150px; margin-bottom:20px; }
-                            h1 { margin:0 0 10px; font-size:28px; color:#333; }
-                            p { margin:5px 0; color:#555; }
-                            .redes-sociais { margin-top:20px; }
-                            .redes-sociais a { display:inline-block; margin-right:15px; font-size:24px; color:#555; transition: color 0.3s; text-decoration:none; }
-                            .redes-sociais a:hover { color:#007BFF; }
-                            .info { margin-top:15px; }
-                            </style>
-                            </head>
-                            <body>
-                            @if($data)
-                            <div class="site-config">
-                                <div class="logo">
-                                    @if(!empty($data->logo))
-                                    <img src="{{ asset($data->logo) }}" alt="Logo do Site">
-                                    @endif
-                                </div>
-                                <h1>{{ $data->nome_site }}</h1>
-                                <div class="info">
-                                    @if($data->cnpj)
-                                    <p><strong>CNPJ:</strong> {{ $data->cnpj }}</p>
-                                    @endif
-                                    @if($data->endereco)
-                                    <p><strong>Endereço:</strong> {!! $data->endereco !!}</p>
-                                    @endif
-                                    @if($data->telefone)
-                                    <p><strong>Telefone:</strong> {{ $data->telefone }}</p>
-                                    @endif
-                                    @if($data->whatsapp)
-                                    <p><strong>WhatsApp:</strong> {{ $data->whatsapp }}</p>
-                                    @endif
-                                    @if($data->email)
-                                    <p><strong>Email:</strong> {{ $data->email }}</p>
-                                    @endif
-                                    @if($data->horario_funcionamento)
-                                    <p><strong>Horário de Funcionamento:</strong> {!! $data->horario_funcionamento !!}</p>
-                                    @endif
-                                </div>
-                                <div class="redes-sociais">
-                                    @if($data->facebook)
-                                    <a href="https://facebook.com/{{ $data->facebook }}" target="_blank">
-                                        <i class="fab fa-facebook"></i>
-                                    </a>
-                                    @endif
-                                    @if($data->instagram)
-                                    <a href="https://instagram.com/{{ $data->instagram }}" target="_blank">
-                                        <i class="fab fa-instagram"></i>
-                                    </a>
-                                    @endif
-                                    @if($data->twitter)
-                                    <a href="https://twitter.com/{{ $data->twitter }}" target="_blank">
-                                        <i class="fab fa-twitter"></i>
-                                    </a>
-                                    @endif
-                                    @if($data->linkedin)
-                                    <a href="https://linkedin.com/in/{{ $data->linkedin }}" target="_blank">
-                                        <i class="fab fa-linkedin"></i>
-                                    </a>
-                                    @endif
-                                    @if($data->youtube)
-                                    <a href="https://youtube.com/{{ $data->youtube }}" target="_blank">
-                                        <i class="fab fa-youtube"></i>
-                                    </a>
-                                    @endif
-                                </div>
+                        <style>
+                        body { font-family: Arial, sans-serif; background: #f4f4f4; margin:0; padding:0; }
+                        .site-config { max-width: 800px; margin:50px auto; background:#fff; padding:30px; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.1); }
+                        .logo img { max-width:150px; margin-bottom:20px; }
+                        h1 { margin:0 0 10px; font-size:28px; color:#333; }
+                        p { margin:5px 0; color:#555; }
+                        .redes-sociais { margin-top:20px; }
+                        .redes-sociais a { display:inline-block; margin-right:15px; font-size:24px; color:#555; transition: color 0.3s; text-decoration:none; }
+                        .redes-sociais a:hover { color:#007BFF; }
+                        .info { margin-top:15px; }
+                        </style>
+                        </head>
+                        <body>
+                        @if($data)
+                        <div class="site-config">
+                            <div class="logo">
+                                @if(!empty($data->logo))
+                                <img src="{{ asset($data->logo) }}" alt="Logo do Site">
+                                @endif
                             </div>
-                            @else
-                            <p style="text-align:center; margin-top:50px;">
-                            Nenhuma configuração cadastrada.
-                            </p>
-                            @endif
-                            </body>
-                            </html>
+                            <h1>{{ $data->nome_site }}</h1>
+                            <div class="info">
+                                @if($data->cnpj)
+                                <p><strong>CNPJ:</strong> {{ $data->cnpj }}</p>
+                                @endif
+                                @if($data->endereco)
+                                <p><strong>Endereço:</strong> {!! $data->endereco !!}</p>
+                                @endif
+                                @if($data->telefone)
+                                <p><strong>Telefone:</strong> {{ $data->telefone }}</p>
+                                @endif
+                                @if($data->whatsapp)
+                                <p><strong>WhatsApp:</strong> {{ $data->whatsapp }}</p>
+                                @endif
+                                @if($data->email)
+                                <p><strong>Email:</strong> {{ $data->email }}</p>
+                                @endif
+                                @if($data->horario_funcionamento)
+                                <p><strong>Horário de Funcionamento:</strong> {!! $data->horario_funcionamento !!}</p>
+                                @endif
+                            </div>
+                            <div class="redes-sociais">
+                                @if($data->facebook)
+                                <a href="https://facebook.com/{{ $data->facebook }}" target="_blank">
+                                    <i class="fab fa-facebook"></i>
+                                </a>
+                                @endif
+                                @if($data->instagram)
+                                <a href="https://instagram.com/{{ $data->instagram }}" target="_blank">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                @endif
+                                @if($data->twitter)
+                                <a href="https://twitter.com/{{ $data->twitter }}" target="_blank">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                @endif
+                                @if($data->linkedin)
+                                <a href="https://linkedin.com/in/{{ $data->linkedin }}" target="_blank">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
+                                @endif
+                                @if($data->youtube)
+                                <a href="https://youtube.com/{{ $data->youtube }}" target="_blank">
+                                    <i class="fab fa-youtube"></i>
+                                </a>
+                                @endif
+                            </div>
                         </div>
+                        @else
+                        <p style="text-align:center; margin-top:50px;">
+                        Nenhuma configuração cadastrada.
+                        </p>
+                        @endif
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div  class="mb-3" >
-        <div class="container-fluid">
-            <div class="row ">
-                <div class="col comp-grid " >
-                </div>
+</div>
+<div  class="mb-3" >
+    <div class="container-fluid">
+        <div class="row ">
+            <div class="col comp-grid " >
             </div>
         </div>
     </div>
+</div>
 </div>
 @endsection
 <!-- Page custom css -->
