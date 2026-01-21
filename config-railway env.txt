@@ -1,0 +1,102 @@
+                        @php
+                        $config = DB::table('config_site')->first(); // pega a primeira configuração
+                        @endphp
+						
+DB_CONNECTION=mysql
+DB_HOST=caboose.proxy.rlwy.net
+DB_PORT=24448
+DB_DATABASE=railway
+DB_USERNAME=root
+DB_PASSWORD=mnCVGtLjBFYmrdIVIfjxJPaXgREZRnDF
+
+------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------
+# --------------------
+# APP
+# --------------------
+APP_NAME=estok
+APP_ENV=production
+APP_KEY=base64:fXyZgXeECg5rZYh7s68N0zxAIyCwi01ZNFcfOtBJS4Y=
+APP_DEBUG=false
+APP_URL=https://estok-production.up.railway.app
+FRONTEND_URL=https://estok-production.up.railway.app
+APP_TIMEZONE=America/Fortaleza
+LOCALE=pt-BR
+
+# --------------------
+# LOG
+# --------------------
+LOG_CHANNEL=stack
+LOG_DEPRECATIONS_CHANNEL=null
+LOG_LEVEL=debug
+
+# --------------------
+# DATABASE
+# --------------------
+DB_CONNECTION=mysql
+DB_HOST=caboose.proxy.rlwy.net
+DB_PORT=24448
+DB_DATABASE=railway
+DB_USERNAME=root
+DB_PASSWORD=mnCVGtLjBFYmrdIVIfjxJPaXgREZRnDF
+
+# --------------------
+# OTP / JWT
+# --------------------
+OTP_DURATION=5
+JWT_DURATION=30
+JWT_SECRET=3eb003cc75741f57241458d371f06321
+JWT_ALGORITHM=HS256
+
+# --------------------
+# CACHE / SESSION / FILES
+# --------------------
+BROADCAST_DRIVER=log
+CACHE_DRIVER=file
+FILESYSTEM_DISK=local
+QUEUE_CONNECTION=sync
+SESSION_DRIVER=file
+SESSION_LIFETIME=120
+SESSION_DOMAIN=.estok-production.up.railway.app
+SESSION_SECURE_COOKIE=true
+
+# --------------------
+# REDIS (se usar)
+# --------------------
+REDIS_HOST=127.0.0.1
+REDIS_PASSWORD=null
+REDIS_PORT=6379
+
+# --------------------
+# EMAIL
+# --------------------
+MAIL_MAILER=smtp
+MAIL_HOST=
+MAIL_PORT=
+MAIL_USERNAME=
+MAIL_PASSWORD=
+MAIL_ENCRYPTION=null
+MAIL_FROM_ADDRESS=
+MAIL_FROM_NAME=
+
+# --------------------
+# AWS / PUSHER (se usar)
+# --------------------
+AWS_ACCESS_KEY_ID=
+AWS_SECRET_ACCESS_KEY=
+AWS_DEFAULT_REGION=
+AWS_BUCKET=
+
+PUSHER_APP_ID=
+PUSHER_APP_KEY=
+PUSHER_APP_SECRET=
+PUSHER_APP_CLUSTER=mt1
+
+MIX_PUSHER_APP_KEY='${PUSHER_APP_KEY}'
+MIX_PUSHER_APP_CLUSTER='${PUSHER_APP_CLUSTER}'
+
+VITE_PUSHER_APP_KEY="${PUSHER_APP_KEY}"
+VITE_PUSHER_HOST="${PUSHER_HOST}"
+VITE_PUSHER_PORT="${VITE_PUSHER_PORT}"
+VITE_PUSHER_SCHEME="${VITE_PUSHER_SCHEME}"
+VITE_PUSHER_APP_CLUSTER="${PUSHER_APP_CLUSTER}"
