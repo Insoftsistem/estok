@@ -9,8 +9,7 @@
         @extends($layout)
         @section('title', $pageTitle)
         @section('content')
-		<link rel="stylesheet" href="{{ asset('css/app.css') }}">
-        <script src="{{ asset('js/app.js') }}"></script>
+		
         <div>
             <div  class="mb-3" >
                 <div class="container-fluid">
@@ -52,7 +51,7 @@
                                     <div class="form-group text-center">
                                         <button class="btn btn-primary btn-block btn-md" type="submit"> 
                                         <i class="load-indicator">
-                                        <clip-loader :loading="loading" color="#fff" size="20px"></clip-loader> 
+										{{--<clip-loader :loading="loading" color="#fff" size="20px"></clip-loader> --}}
                                         </i>
                                         {{ __('login') }} <i class="material-icons">lock_open</i>
                                         </button>
@@ -69,26 +68,11 @@
                 </div>
                 <div class="col-md-4 comp-grid " >
                     <div class=" "><div>
-                        <!DOCTYPE html>
-                        <html lang="pt-BR">
-                        <head>
-                        <meta charset="UTF-8">
-                        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                        <title>{{ $data->nome_site ?? 'Meu Site' }}</title>
-                        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-                            <style>
-                            body { font-family: Arial, sans-serif; background: #f4f4f4; margin:0; padding:0; }
-                            .site-config { max-width: 800px; margin:50px auto; background:#fff; padding:30px; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.1); }
-                            .logo img { max-width:150px; margin-bottom:20px; }
-                            h1 { margin:0 0 10px; font-size:28px; color:#333; }
-                            p { margin:5px 0; color:#555; }
-                            .redes-sociais { margin-top:20px; }
-                            .redes-sociais a { display:inline-block; margin-right:15px; font-size:24px; color:#555; transition: color 0.3s; text-decoration:none; }
-                            .redes-sociais a:hover { color:#007BFF; }
-                            .info { margin-top:15px; }
-                            </style>
-                            </head>
-                            <body>
+                        
+                        {{ $data->nome_site ?? 'Meu Site' }}
+                        
+                           
+                           
                             @if($data)
                             <div class="site-config">
                                 <div class="logo">
@@ -150,8 +134,7 @@
                             Nenhuma configuração cadastrada.
                             </p>
                             @endif
-                            </body>
-                            </html>
+                            
                         </div>
                     </div>
                 </div>
@@ -170,9 +153,19 @@
 @endsection
 <!-- Page custom css -->
 @section('pagecss')
-<style>
-<style></style>
+ <style>
+                            body { font-family: Arial, sans-serif; background: #f4f4f4; margin:0; padding:0; }
+                            .site-config { max-width: 800px; margin:50px auto; background:#fff; padding:30px; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.1); }
+                            .logo img { max-width:150px; margin-bottom:20px; }
+                            h1 { margin:0 0 10px; font-size:28px; color:#333; }
+                            p { margin:5px 0; color:#555; }
+                            .redes-sociais { margin-top:20px; }
+                            .redes-sociais a { display:inline-block; margin-right:15px; font-size:24px; color:#555; transition: color 0.3s; text-decoration:none; }
+                            .redes-sociais a:hover { color:#007BFF; }
+                            .info { margin-top:15px; }
 </style>
+                            
+
 @endsection
 <!-- Page custom js -->
 @section('pagejs')
