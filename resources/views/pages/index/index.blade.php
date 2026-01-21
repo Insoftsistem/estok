@@ -149,15 +149,18 @@
 <!-- Page custom css -->
 @section('pagecss')
 <style>
-    body { font-family: Arial, sans-serif; background: #f4f4f4; margin:0; padding:0; }
-    .site-config { max-width: 800px; margin:50px auto; background:#fff; padding:30px; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.1); }
-    .logo img { max-width:150px; margin-bottom:20px; }
-    h1 { margin:0 0 10px; font-size:28px; color:#333; }
-    p { margin:5px 0; color:#555; }
-    .redes-sociais { margin-top:20px; }
-    .redes-sociais a { display:inline-block; margin-right:15px; font-size:24px; color:#555; transition: color 0.3s; text-decoration:none; }
-    .redes-sociais a:hover { color:#007BFF; }
-    .info { margin-top:15px; }
+                            body { font-family: Arial, sans-serif; background: #f4f4f4; margin:0; padding:0; }
+                            .site-config { max-width: 800px; margin:50px auto; background:#fff; padding:30px; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.1); }
+                            .logo img { max-width:150px; margin-bottom:20px; }
+                            h1 { margin:0 0 10px; font-size:28px; color:#333; }
+                            p { margin:5px 0; color:#555; }
+                            .redes-sociais { margin-top:20px; }
+                            .redes-sociais a { display:inline-block; margin-right:15px; font-size:24px; color:#555; transition: color 0.3s; text-decoration:none; }
+                            .redes-sociais a:hover { color:#007BFF; }
+                            .info { margin-top:15px; }
+                            </style>
+<style>
+<style></style>
 </style>
 @endsection
 <!-- Page custom js -->
